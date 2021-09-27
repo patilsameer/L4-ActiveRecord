@@ -54,5 +54,10 @@ class Todo < ActiveRecord::Base
             #  puts "working agian"
     end
 
-
+    def self.mark_as_complete(todo_id)
+     obj=Todo.find(todo_id);
+     obj.completed=true;
+     obj.save;
+     obj;
+    end
 end#class ends here
